@@ -1,1 +1,45 @@
-gggg
+package work;
+import java.util.*;
+import java.math.*;
+public class task
+{
+	public static Scanner input = new Scanner(System.in);
+	public static void main(String[] args){
+		int rand;
+		String[] arr = new String[4];
+		for(int i = 0; i<4; i++) {
+		rand = (int)(Math.random() * 9);
+		arr[i] = Integer.toString(rand);
+		}
+		String guess,out = "";
+		for(int i = 0; i<10; i++) {
+		guess = guess();
+		for(int j = 0; j<4; j++) {
+		for(int k = 0; k<4; k++) {
+		if(String.valueOf(guess.charAt(j)).equals(arr[j])) {
+		out += "*";
+		k=4;
+		}else if(String.valueOf(guess.charAt(j)).equals(arr[k])) {
+		out += "0";
+		k=4;
+		}else if(k == 3 && !String.valueOf(guess.charAt(j)).equals(arr[k])) {
+		out+=" ";
+		}
+		}
+		}
+		System.out.println(out);
+		out = "";
+		}
+
+		}
+		public static String guess() {
+		System.out.println("enter a 4 digits number");
+		String num = input.nextLine();
+		return num;
+}
+}
+//public static void(sum){
+	
+
+
+
