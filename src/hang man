@@ -1,0 +1,157 @@
+public static void main(String[] args){
+		public static String ish(String guess, String word, String afterguess){
+			String newword="";
+			for (int i = 0; i < word.length(); i++) {
+				if (word.charAt(i) == guess.charAt(0)) {
+					newword+=guess.charAt(0);
+				}
+				else if(afterguess.charAt(i)!='_'){
+					newword+=afterguess.charAt(i);
+				}
+				else {
+					newword+='_';
+				}
+			}
+			return newword;	
+		}
+		public static void answer (int count) {
+			if (count == 1) {
+				System.out.println("Wrong guess, try again");
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println("|");
+				System.out.println();
+			}
+			if (count == 2) {
+				System.out.println("Wrong guess, try again");
+				System.out.println("   |");
+				System.out.println("   |");
+				System.out.println("   |");
+				System.out.println("   |");
+				System.out.println("   |");
+				System.out.println("   |");
+				System.out.println("   |");
+				System.out.println("|");
+			}
+			if (count == 3) {
+				System.out.println("Wrong guess, try again");
+				System.out.println("   __");
+				System.out.println("   |");
+				System.out.println("   |");
+				System.out.println("   |");
+				System.out.println("   |");
+				System.out.println("   |");
+				System.out.println("   |");
+				System.out.println("   | ");
+				System.out.println("|");
+			}
+			if (count == 4) {
+				System.out.println("Wrong guess, try again");
+				System.out.println("   __");
+				System.out.println("   |          |");
+				System.out.println("   |         /   \\");
+				System.out.println("   |        |     |");
+				System.out.println("   |         \\_ _/");
+				System.out.println("   |");
+				System.out.println("   |");
+				System.out.println("   |");
+				System.out.println("|");
+			}
+			if (count == 5) {
+				System.out.println("Wrong guess, try again");
+				System.out.println("   __");
+				System.out.println("   |          |");
+				System.out.println("   |         /   \\");
+				System.out.println("   |        |     |");
+				System.out.println("   |         \\_ _/");
+				System.out.println("   |           |");
+				System.out.println("   |           |");
+				System.out.println("   |");
+				System.out.println("|");
+			}
+			if (count == 6) {
+				System.out.println("Wrong guess, try again");
+				System.out.println("   __");
+				System.out.println("   |          |");
+				System.out.println("   |         /   \\");
+				System.out.println("   |        |     |");
+				System.out.println("   |         \\_ _/");
+				System.out.println("   |           |");
+				System.out.println("   |           |");
+				System.out.println("   |          / \\ ");
+				System.out.println("|      /   \\");
+			}
+			if (count == 7) {
+				System.out.println("GAME OVER!");
+				System.out.println("   __");
+				System.out.println("   |          |");
+				System.out.println("   |         /   \\");
+				System.out.println("   |        |     |");
+				System.out.println("   |         \\_ _/");
+				System.out.println("   |          |");
+				System.out.println("   |         / | \\");
+				System.out.println("   |          / \\ ");
+				System.out.println("|      /   \\");
+				System.out.println("               ");
+			}
+		}
+
+
+		public static void main(String[] args){
+			String[] words = {"desk", "coding", "shahar", "matan", "light", "notebook", "speaker" };
+			String word = words[(int) (Math.random() * words.length)];
+			String z= "";
+			for (int i = 0; i < word.length(); i++) {
+				z+='_';
+
+			}
+			System.out.println("Enter a guess");
+			String guess = r.next();
+			z =ish(guess,word,z);
+			System.out.println(z);
+			System.out.println();
+			int count=0;
+			if (!word.contains(guess)){
+				count++;			
+				answer(count);
+			}
+			if (word.contains(guess)){
+				System.out.println("correct!");
+				System.out.println();
+			}
+			System.out.println("the word is currently   ="+z);
+			System.out.println();
+			System.out.println("-------------------------------------------------------------------------------------------------");
+			System.out.println();
+			while (z.contains("_")){
+				System.out.println("pls enter a guess");
+				guess = r.next();
+				z =ish(guess,word,z);
+				if (!word.contains(guess)){
+					count++;			
+					answer(count);
+					if (count ==7){
+						for (int i = 0; i < z.length(); i++) {
+							z = "";
+							System.out.println("the word was   "+word);
+						}				}
+				}
+				if (word.contains(guess)){
+					System.out.println("correct!");
+				}
+				System.out.println("the word is currently   =   "+z);
+				System.out.println();
+				System.out.println("-------------------------------------------------------------------------------------------------");
+				System.out.println();
+			}
+			if (count!=7){
+				System.out.println("youre are a super genius man");
+			}
+
+		}
+
+	
+}
+}
